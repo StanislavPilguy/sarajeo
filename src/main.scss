@@ -1,0 +1,85 @@
+/* or your 'styles.scss' with */
+
+$accent: orange; // Accent Color
+$fontsize: 16px; // Body Font Size
+$textcolor: #333; // Text Color
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
+$lato: Lato-Think, sans-serif; // Roboto Font Family
+
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    font-display: swap; // Uncomment to initially display system fonts
+  }
+}
+@include font('Lato-Think', normal, 200, '../fonts/Aplrdbd.woff2');
+@include font('Lato-Black', normal, 800, '../fonts/Gilroy-ExtraBold.woff2');
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder {
+  color: #666;
+}
+
+::selection {
+  background-color: $accent;
+  color: #fff;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+input, textarea {
+  outline: none;
+  &:focus:required:invalid { border-color: red }
+  &:required:valid { border-color: green }
+}
+
+body {
+  font-family: $gilroy;
+  font-size: $fontsize;
+  min-width: 320px;
+  position: relative;
+  overflow-x: hidden;
+  color: $textcolor;
+  padding: 0;
+  margin: 0;
+}
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {}
+/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+  .logo {
+    display: none;
+  }
+
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {}
+/**/
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {}
+/**/

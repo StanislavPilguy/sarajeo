@@ -4,10 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "start:open": "ng serve --open",
+    "build": "ng build --prod",
+    "build:prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy:prod": "now --prod",
+    "deploy": "now",
+    "http:server": "http-server ./dist/sarajeo"
   },
   "private": true,
   "dependencies": {
